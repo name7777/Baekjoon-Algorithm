@@ -12,6 +12,7 @@ let input = [];
 
 rl.on('line', function(line) {
     input = line.split(' ').map((el) => parseInt(el)); // ' ' 공백을 기준으로 문자열을 split 후 parseInt로 정수처리 => 공백을 기준으로 입력을 2개 받고 input 배열에 넣어 인덱스 0, 1로 출력
+    rl.close();
 })
 .on('close', function() {
     console.log(input[0] - input[1]);

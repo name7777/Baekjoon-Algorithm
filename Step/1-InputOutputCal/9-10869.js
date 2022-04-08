@@ -4,20 +4,23 @@
 
 const readline = require('readline');
 const rl = readline.createInterface({
-    input : process.stdin,
-    output : process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
 
-let input = [];
-
 rl.on('line', function(line) {
-    input = line.split(' ').map((el) => parseInt(el));
-})
-.on('close', function() {
-    console.log(input[0] + input[1]);
-    console.log(input[0] - input[1]);
-    console.log(input[0] * input[1]);
-    console.log(input[0] / input[1]);
-    console.log(input[0] % input[1]);
-    process.exit();
+  input = line.split(' ');
+    
+  const num1 = Number(input[0]); // ★ 자연수(Number)로 변환
+  const num2 = Number(input[1]);
+
+  console.log(num1 + num2);
+  console.log(num1 - num2);
+  console.log(num1 * num2);
+  console.log(Math.floor(num1 / num2));
+  console.log(num1 % num2);
+
+  rl.close(); // 써줘야 node 커맨드에서 입력받은 후 자동으로 종료됨
+}).on("close", function() {
+  process.exit();
 });
