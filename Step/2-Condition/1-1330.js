@@ -7,3 +7,24 @@
     - A와 B가 같은 경우에는 '=='를 출력한다.
  * 제한: -10,000 ≤ A, B ≤ 10,000
  */
+
+const readline = require('readline');
+const rl = readline.createInterface({
+   input: process.stdin,
+   output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', (line) => {
+   let [A, B] = line.split(' ').map((el) => parseInt(el));
+
+   if(A > B) console.log('>');
+   else if(A < B) console.log('<');
+   else console.log('==');
+   
+   rl.close();
+})
+.on('close', () => {
+   process.exit();
+});

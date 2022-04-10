@@ -5,7 +5,7 @@
  */
 
 const fs = require('fs');
-const [A, B] = fs.readFileSync("./dev/stdin.txt").toString().trim().split('\n'); // ★ 구조분해할당
+const [A, B] = fs.readFileSync("./stdin/13-2588.txt").toString().trim().split('\n'); // ★ 구조분해할당
 
 const [B0, B1, B2] = B.split('');
 const temp1 = A * B2;
